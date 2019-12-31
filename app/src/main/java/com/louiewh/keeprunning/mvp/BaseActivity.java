@@ -1,4 +1,4 @@
-package com.louiewh.keeprunning.base;
+package com.louiewh.keeprunning.mvp;
 
 import android.os.Bundle;
 
@@ -25,33 +25,17 @@ abstract public class BaseActivity extends AppCompatActivity {
         initData();
     }
 
+
+    protected abstract @LayoutRes int getContentView();
+
+
+    protected abstract void initView(Bundle savedInstanceState);
+
+    protected abstract void initListeners();
+
     protected abstract void initData();
 
-
-    /**
-     * --次序1--
-     * 返回layout的id
-     */
-    public abstract @LayoutRes int getContentView();
-
-    /**
-     * --次序2--
-     * 初始化view
-     */
-    public abstract void initView(Bundle savedInstanceState);
-
-    /**
-     * 设置监听器，在initView()之后
-     * --次序3--
-     */
-    public abstract void initListeners();
-
-    /**
-     * --次序4--
-     * 绑定
-     */
-    public abstract void bind();
-
+    protected abstract void bind();
 
 
     @Override

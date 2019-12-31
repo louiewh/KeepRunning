@@ -1,4 +1,4 @@
-package com.louiewh.keeprunning.model.home;
+package com.louiewh.keeprunning.model.home.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

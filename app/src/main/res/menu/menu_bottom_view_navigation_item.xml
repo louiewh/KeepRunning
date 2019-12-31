@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/na_home"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@mipmap/ic_menu_home_48dp"
         android:title="@string/home" />
     <item
         android:id="@+id/na_hot"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@mipmap/ic_menu_shot_48dp"
         android:title="@string/hot" />
-    <item
-        android:id="@+id/na_topic"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="@string/topic" />
-    <item
-        android:id="@+id/na_column"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="@string/column" />
+<!--    <item-->
+<!--        android:id="@+id/na_topic"-->
+<!--        android:icon="@mipmap/ic_menu_shot_48dp"-->
+<!--        android:title="@string/topic" />-->
+<!--    <item-->
+<!--        android:id="@+id/na_column"-->
+<!--        android:icon="@mipmap/ic_menu_column_48dp"-->
+<!--        android:title="@string/column" />-->
 </menu>

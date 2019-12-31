@@ -1,4 +1,4 @@
-package com.louiewh.keeprunning.base;
+package com.louiewh.keeprunning.mvp;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

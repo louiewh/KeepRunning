@@ -1,14 +1,18 @@
-package com.louiewh.keeprunning.adpter;
+package com.louiewh.keeprunning.model.hot.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
+import com.louiewh.keeprunning.data.HotStory;
+import com.louiewh.keeprunning.model.content.StoryActivity;
+import com.louiewh.keeprunning.util.LogWrapper;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -17,8 +21,14 @@ import butterknife.ButterKnife;
 
 public class HotRecyclerViewAdapter extends XRecyclerView.Adapter<HotRecyclerViewAdapter.HotViewHolder> {
 
+    private HotStory mHotStory;
 
-    public HotRecyclerViewAdapter(Context context) {
+    public HotRecyclerViewAdapter() {
+
+    }
+
+    public void setHotStoryList(HotStory list){
+        mHotStory = list;
     }
 
     @NonNull
@@ -33,10 +43,27 @@ public class HotRecyclerViewAdapter extends XRecyclerView.Adapter<HotRecyclerVie
     @Override
     public void onBindViewHolder(@NonNull HotViewHolder holder, int position) {
 
+        LogWrapper.d("Hot", "onBindViewHolder");
+        if (mHotStory != null) {
+            holder.mTextViewHome.setText(mHotStory.mRecent.get(position).mTitle);
+
+            Glide.with(App.getInstance()).load(mHotStory.mRecent.get(position).mThumbnail).into(holder.mImageView);
+            holder.mCardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    StoryActivity.lanuch(App.getInstance(), mHotStory.mRecent.get(position).mNewsId);
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
+
+        if(mHotStory != null && mHotStory.mRecent != null){
+            return  mHotStory.mRecent.size();
+        }
+
         return 0;
     }
 
@@ -53,7 +80,7 @@ public class HotRecyclerViewAdapter extends XRecyclerView.Adapter<HotRecyclerVie
 
         public HotViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

@@ -10,11 +10,13 @@ import android.view.View;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.louiewh.keeprunning.R;
-import com.louiewh.keeprunning.base.BaseFragment;
+import com.louiewh.keeprunning.mvp.BaseFragment;
 import com.louiewh.keeprunning.data.DailyStory;
 import com.louiewh.keeprunning.data.Lastest;
 import com.louiewh.keeprunning.data.Story;
 import com.louiewh.keeprunning.data.TopStory;
+import com.louiewh.keeprunning.model.home.adapter.HomeRecyclerViewAdapter;
+import com.louiewh.keeprunning.model.home.adapter.HomeViewPagerAdapter;
 import com.louiewh.keeprunning.util.LogWrapper;
 import com.tmall.ultraviewpager.UltraViewPager;
 

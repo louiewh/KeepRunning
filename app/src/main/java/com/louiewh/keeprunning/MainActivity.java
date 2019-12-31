@@ -5,7 +5,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.louiewh.keeprunning.adpter.ViewPagerFragmentStateAdapter;
-import com.louiewh.keeprunning.base.BaseActivity;
+import com.louiewh.keeprunning.mvp.BaseActivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -56,16 +56,18 @@ public class MainActivity extends BaseActivity {
                 switch (item.getItemId()){
                     case R.id.na_home:
                         setTitle(R.string.home);
+                        mViewPager.setCurrentItem(0);
                         break;
                     case R.id.na_hot:
                         setTitle(R.string.hot);
+                        mViewPager.setCurrentItem(1);
                         break;
-                    case R.id.na_topic:
-                        setTitle(R.string.topic);
-                        break;
-                    case R.id.na_column:
-                        setTitle(R.string.column);
-                        break;
+//                    case R.id.na_topic:
+//                        setTitle(R.string.topic);
+//                        break;
+//                    case R.id.na_column:
+//                        setTitle(R.string.column);
+//                        break;
                         default:break;
                 }
 

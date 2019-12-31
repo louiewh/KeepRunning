@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.louiewh.keeprunning.R;
-import com.louiewh.keeprunning.base.BaseActivity;
+import com.louiewh.keeprunning.mvp.BaseActivity;
 import com.louiewh.keeprunning.data.StoryContent;
 
 import androidx.appcompat.app.ActionBar;
@@ -139,11 +139,11 @@ public class StoryActivity extends BaseActivity implements IStoryView {
                 intent.setType("text/plain");
                 startActivity(Intent.createChooser(intent, "分享给"));
                 break;
-            case R.id.story_comment:
+//            case R.id.story_comment:
 //                Intent intentToComment = new Intent(StoryActivity.this,CommentActivity.class);
 //                intentToComment.putExtra("story_id",storyId);
 //                startActivity(intentToComment);
-                break;
+//                break;
 
         }
 

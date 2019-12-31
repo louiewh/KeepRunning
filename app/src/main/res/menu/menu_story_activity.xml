@@ -6,9 +6,9 @@
         android:icon="@mipmap/ic_share"
         android:title="share"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/story_comment"
-        android:icon="@mipmap/ic_comment"
-        android:title="comment"
-        app:showAsAction="always"/>
+<!--    <item-->
+<!--        android:id="@+id/story_comment"-->
+<!--        android:icon="@mipmap/ic_comment"-->
+<!--        android:title="comment"-->
+<!--        app:showAsAction="always"/>-->
 </menu>

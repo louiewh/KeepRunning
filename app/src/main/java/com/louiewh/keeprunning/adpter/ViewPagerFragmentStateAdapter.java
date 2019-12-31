@@ -1,6 +1,7 @@
 package com.louiewh.keeprunning.adpter;
 
 import com.louiewh.keeprunning.model.home.HomeFragment;
+import com.louiewh.keeprunning.model.hot.HotFragment;
 
 import java.util.ArrayList;
 
@@ -17,9 +18,7 @@ public class ViewPagerFragmentStateAdapter extends FragmentStateAdapter {
     public ViewPagerFragmentStateAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
         mFragment.add(HomeFragment.getInstance());
-//        mFragment.add(HotFragment.getInstance());
-//        mFragment.add(TopicFragment.getInstance());
-//        mFragment.add(ColumnFragment.getInstance());
+        mFragment.add(HotFragment.getInstance());
     }
 
     @NonNull
