@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">KeepRunning</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="home">首页</string>
+    <string name="hot">热门</string>
+    <string name="topic">主题</string>
+    <string name="column">栏目</string>
+</resources>
