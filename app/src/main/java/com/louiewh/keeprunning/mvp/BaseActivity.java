@@ -1,6 +1,10 @@
 package com.louiewh.keeprunning.mvp;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.louiewh.keeprunning.util.LogWrapper;
+import com.marcoscg.materialtoast.MaterialToast;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
@@ -42,5 +46,9 @@ abstract public class BaseActivity extends AppCompatActivity {
     protected void onStop() {
 //        unbinder.unbind();
         super.onStop();
+    }
+
+    protected void showToast(String toast){
+        MaterialToast.makeText(this, toast, Toast.LENGTH_SHORT).show();
     }
 }

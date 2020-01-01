@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.mvp.BaseActivity;
 import com.louiewh.keeprunning.data.StoryContent;
+import com.louiewh.keeprunning.util.LogWrapper;
 
 import androidx.appcompat.app.ActionBar;
 import butterknife.BindView;
@@ -92,6 +93,18 @@ public class StoryActivity extends BaseActivity implements IStoryView {
             @Override
             public void run() {
                 mProgressBar.setVisibility(View.INVISIBLE);
+            }
+        }, 500);
+    }
+
+    @Override
+    public void notifyThrowable(Throwable throwable) {
+        LogWrapper.exception("notifyThrowable", throwable);
+        mProgressBar.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mProgressBar.setVisibility(View.INVISIBLE);
+                showToast(throwable.getMessage());
             }
         }, 500);
     }

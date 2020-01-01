@@ -66,6 +66,8 @@ dependencies {
         transitive = true
     }
 
+    implementation 'com.github.marcoscgdev:MaterialToast:1.0.1'
+
 
     implementation 'com.android.support:multidex:1.0.3'
 

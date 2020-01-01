@@ -67,11 +67,14 @@ public class HomeFragment extends BaseFragment implements IHomeView{
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void initView() {
 
         initXRecycleView();
         initUltraViewPager();
+    }
+
+    @Override
+    protected void initData() {
 
         mHomePresenter = new HomePresenter(this);
         mHomePresenter.getLastest();
@@ -199,5 +202,10 @@ public class HomeFragment extends BaseFragment implements IHomeView{
         } else if(data instanceof DailyStory){
             updateBefore((DailyStory) data);
         }
+    }
+
+    @Override
+    public void notifyThrowable(Throwable throwable) {
+        showToast(throwable.getMessage());
     }
 }

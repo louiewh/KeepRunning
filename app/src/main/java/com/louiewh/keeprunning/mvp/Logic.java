@@ -38,6 +38,9 @@ public class Logic {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
                         LogWrapper.e("AAA", throwable.toString());
+                        if(mLogicListener != null){
+                            mLogicListener.notifyThrowable(throwable);
+                        }
                     }
                 });
     }

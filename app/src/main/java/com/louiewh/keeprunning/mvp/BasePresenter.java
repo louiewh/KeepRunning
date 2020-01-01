@@ -7,7 +7,7 @@ abstract public class BasePresenter {
     protected LogicListener mLogicListener;
 
 
-    public BasePresenter(IBaseView view){
+    public BasePresenter(IBaseView view) {
 
         mIBaseView = view;
         mLogic = new Logic();
@@ -16,11 +16,20 @@ abstract public class BasePresenter {
             public void notifyDataChange(Object data) {
                 BasePresenter.this.notifyDataChange(data);
             }
+
+            @Override
+            public void notifyThrowable(Throwable throwable) {
+                BasePresenter.this.notifyThrowable(throwable);
+            }
         };
         mLogic.registerListener(mLogicListener);
     }
 
-    public void notifyDataChange(Object data){
+    public void notifyDataChange(Object data) {
         mIBaseView.notifyViewDataChange(data);
+    }
+
+    public void notifyThrowable(Throwable throwable) {
+        mIBaseView.notifyThrowable(throwable);
     }
 }
