@@ -17,6 +17,6 @@ public class HotPresenter extends BasePresenter {
         ApiZhihu service = RetrofitFactory.getZhihuService();
         Observable<HotStory> observable =  service.getHotStory();
 
-        mLogic.subscribe(observable);
+        subscribe(observable);
     }
 }

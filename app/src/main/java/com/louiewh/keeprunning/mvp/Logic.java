@@ -1,7 +1,10 @@
 package com.louiewh.keeprunning.mvp;
 
 import com.louiewh.keeprunning.util.LogWrapper;
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
+import androidx.lifecycle.Lifecycle;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -43,5 +46,30 @@ public class Logic {
                         }
                     }
                 });
+    }
+
+    public <T> void subscribeWithDisposable(Observable<T> observable, Lifecycle lifecycle) {
+
+        observable
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .as(AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(lifecycle)))
+                .subscribe(new Consumer<Object>() {
+                            @Override
+                            public void accept(Object data) throws Exception {
+
+                                if(mLogicListener != null){
+                                    mLogicListener.notifyDataChange(data);
+                                }
+                            }
+                        }, new Consumer<Throwable>() {
+                            @Override
+                            public void accept(Throwable throwable) throws Exception {
+                                LogWrapper.e("AAA", throwable.toString());
+                                if(mLogicListener != null){
+                                    mLogicListener.notifyThrowable(throwable);
+                                }
+                            }
+                        });
     }
 }

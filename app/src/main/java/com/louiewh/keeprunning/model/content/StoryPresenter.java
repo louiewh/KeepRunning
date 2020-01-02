@@ -17,6 +17,6 @@ public class StoryPresenter extends BasePresenter {
         ApiZhihu service = RetrofitFactory.getZhihuService();
         Observable<StoryContent> observable =  service.getZhihuContent(id);
 
-        mLogic.subscribe(observable);
+        subscribe(observable);
     }
 }

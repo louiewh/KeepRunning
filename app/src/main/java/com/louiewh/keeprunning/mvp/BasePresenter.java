@@ -1,15 +1,19 @@
 package com.louiewh.keeprunning.mvp;
 
+import androidx.lifecycle.Lifecycle;
+import io.reactivex.Observable;
+
 abstract public class BasePresenter {
 
     protected IBaseView mIBaseView;
     protected Logic mLogic;
     protected LogicListener mLogicListener;
-
+    protected Lifecycle mLifecycle;
 
     public BasePresenter(IBaseView view) {
 
         mIBaseView = view;
+        mLifecycle = mIBaseView.getLifecycle();
         mLogic = new Logic();
         mLogicListener = new LogicListener() {
             @Override
@@ -23,6 +27,10 @@ abstract public class BasePresenter {
             }
         };
         mLogic.registerListener(mLogicListener);
+    }
+
+    public <T> void subscribe(Observable<T> observable) {
+        mLogic.subscribeWithDisposable(observable, mLifecycle);
     }
 
     public void notifyDataChange(Object data) {

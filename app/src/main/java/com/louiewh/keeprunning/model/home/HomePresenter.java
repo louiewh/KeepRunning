@@ -28,7 +28,7 @@ public class HomePresenter extends BasePresenter {
         ApiZhihu service = RetrofitFactory.getZhihuService();
         Observable<DailyStory> observable =  service.getBeforeStory(data);
 
-        mLogic.subscribe(observable);
+        subscribe(observable);
     }
 
 }
