@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.TopStory;
-import com.louiewh.keeprunning.model.content.StoryActivity;
+import com.louiewh.keeprunning.zhihu.RouteZhihu;
 
 import java.util.List;
 
@@ -57,7 +57,7 @@ public class HomeViewPagerAdapter extends PagerAdapter {
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StoryActivity.lanuch(App.getInstance(), mTopStoryList.get(position).id);
+                RouteZhihu.startActivityForStory( mTopStoryList.get(position).id);
             }
         });
 

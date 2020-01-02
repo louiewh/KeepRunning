@@ -1,5 +1,6 @@
 package com.louiewh.keeprunning;
 
+import com.louiewh.keeprunning.util.ARouteUtil;
 import com.louiewh.keeprunning.util.StethoUtil;
 import com.louiewh.keeprunning.util.Util;
 
@@ -19,5 +20,6 @@ public class App extends MultiDexApplication {
 
         Util.init(this);
         StethoUtil.init(this);
+        ARouteUtil.init(this);
     }
 }

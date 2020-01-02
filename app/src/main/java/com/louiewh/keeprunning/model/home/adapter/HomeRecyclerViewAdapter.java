@@ -11,7 +11,7 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.Story;
-import com.louiewh.keeprunning.model.content.StoryActivity;
+import com.louiewh.keeprunning.zhihu.RouteZhihu;
 
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class HomeRecyclerViewAdapter extends XRecyclerView.Adapter<HomeRecyclerV
             holder.mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StoryActivity.lanuch(App.getInstance(), mStory.get(position).id);
+                    RouteZhihu.startActivityForStory(mStory.get(position).id);
                 }
             });
         }

@@ -1,6 +1,5 @@
 package com.louiewh.keeprunning.model.content;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,15 +10,18 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
 import com.louiewh.keeprunning.R;
-import com.louiewh.keeprunning.mvp.BaseActivity;
 import com.louiewh.keeprunning.data.StoryContent;
+import com.louiewh.keeprunning.mvp.BaseActivity;
 import com.louiewh.keeprunning.util.LogWrapper;
+import com.louiewh.keeprunning.zhihu.RouteZhihu;
 
 import androidx.appcompat.app.ActionBar;
 import butterknife.BindView;
 
+@Route(path = RouteZhihu.ZHIHU_STORY_CONTENT)
 public class StoryActivity extends BaseActivity implements IStoryView {
 
     public static final String  STORY_ID = "story_id";
@@ -44,13 +46,6 @@ public class StoryActivity extends BaseActivity implements IStoryView {
 
     private StoryPresenter mStoryPresenter;
     private String mShareUrl;
-
-    public static void lanuch(Context context, int id) {
-        Intent mIntent = new Intent(context, StoryActivity.class);
-        mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mIntent.putExtra(STORY_ID, id);
-        context.startActivity(mIntent);
-    }
 
     @Override
     protected void initData() {

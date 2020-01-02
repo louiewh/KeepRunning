@@ -11,8 +11,8 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.HotStory;
-import com.louiewh.keeprunning.model.content.StoryActivity;
 import com.louiewh.keeprunning.util.LogWrapper;
+import com.louiewh.keeprunning.zhihu.RouteZhihu;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -51,7 +51,7 @@ public class HotRecyclerViewAdapter extends XRecyclerView.Adapter<HotRecyclerVie
             holder.mCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StoryActivity.lanuch(App.getInstance(), mHotStory.mRecent.get(position).mNewsId);
+                    RouteZhihu.startActivityForStory(mHotStory.mRecent.get(position).mNewsId);
                 }
             });
         }
