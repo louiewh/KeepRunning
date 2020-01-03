@@ -16,7 +16,7 @@ import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.StoryContent;
 import com.louiewh.keeprunning.mvp.BaseActivity;
 import com.louiewh.keeprunning.util.LogWrapper;
-import com.louiewh.keeprunning.zhihu.RouteZhihu;
+import com.louiewh.keeprunning.route.RouteZhihu;
 
 import androidx.appcompat.app.ActionBar;
 import butterknife.BindView;

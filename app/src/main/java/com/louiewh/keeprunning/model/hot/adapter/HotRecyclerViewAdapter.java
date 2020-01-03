@@ -12,7 +12,7 @@ import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.HotStory;
 import com.louiewh.keeprunning.util.LogWrapper;
-import com.louiewh.keeprunning.zhihu.RouteZhihu;
+import com.louiewh.keeprunning.route.RouteZhihu;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;

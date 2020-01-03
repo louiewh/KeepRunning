@@ -11,7 +11,7 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.Story;
-import com.louiewh.keeprunning.zhihu.RouteZhihu;
+import com.louiewh.keeprunning.route.RouteZhihu;
 
 import java.util.List;
 

@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.louiewh.keeprunning.App;
 import com.louiewh.keeprunning.R;
 import com.louiewh.keeprunning.data.TopStory;
-import com.louiewh.keeprunning.zhihu.RouteZhihu;
+import com.louiewh.keeprunning.route.RouteZhihu;
 
 import java.util.List;
 
