@@ -1,5 +1,7 @@
 package com.louiewh.keeprunning.mvp;
 
+import android.annotation.SuppressLint;
+
 import com.louiewh.keeprunning.util.LogWrapper;
 import com.uber.autodispose.AutoDispose;
 import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
@@ -24,6 +26,7 @@ public class Logic {
         mLogicListener = null;
     }
 
+    @SuppressLint("CheckResult")
     public <T> void subscribe(Observable<T> observable) {
 
         observable

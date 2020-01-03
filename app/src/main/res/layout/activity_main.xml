@@ -17,6 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -24,8 +25,8 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -36,6 +37,7 @@
         app:itemTextColor="@android:color/white"
         app:itemIconTint="#FFF"
         app:labelVisibilityMode="labeled"
+        app:layout_behavior="com.louiewh.keeprunning.view.BottomNavigationBehavior"
         app:menu="@menu/menu_bottom_view_navigation_item" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
