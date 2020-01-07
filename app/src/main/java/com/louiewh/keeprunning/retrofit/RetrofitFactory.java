@@ -5,9 +5,6 @@ import com.louiewh.keeprunning.api.ApiZhihu;
 import com.louiewh.keeprunning.util.LogWrapper;
 import com.louiewh.keeprunning.util.Util;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -30,13 +27,7 @@ public class RetrofitFactory {
     private static ApiZhihu createApiZhihu(){
 
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(message -> {
-            try {
-                String text = URLDecoder.decode(message, "utf-8");
-                LogWrapper.dWithoutline("OKHttp-----", text);
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-                LogWrapper.e("OKHttp-----", message);
-            }
+            LogWrapper.dWithoutline("OKHttp-----", message);
         });
 
         if (Util.isDebug()) {
